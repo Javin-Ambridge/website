@@ -1,0 +1,479 @@
+.navbar-custom {
+    background-color:#282320;
+    color:#FFFFFF;
+    border-radius:0;
+    height: 60px;
+}
+
+.navbar-custom .navbar-nav > li > a {
+    color:#FFFFFF;
+    height: 60px;
+}
+.navbar-custom .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
+    color: #FFFFFF;
+    background-color:transparent;
+    height: 60px;
+}
+.navbar-custom .navbar-brand {
+    color:#FFFFFF;
+    height: 60px;
+}
+
+.glyphicon.glyphicon-home {
+    font-size: 35px;
+}
+
+p.small {
+	float: right;
+	font-size: 13px;
+	color: white;
+}
+
+.a {
+	padding-top: 0px;
+	background-color: #edce60;
+	position: fixed;
+	width: 100%;
+	overflow-y: auto; 
+	height: 90%;
+}
+
+.b {
+	padding-top: 0px;
+	background-color: #D6F39B;
+	position: fixed;
+	width: 100%;
+	overflow-y: auto; 
+	height: 90%;
+}
+
+.c {
+	padding-top: 0px;
+	background-color: #7CB5FF;
+	position: fixed;
+	width: 100%;
+	overflow-y: auto; 
+	height: 90%;
+}
+
+.titleA {
+	width: 900px;
+  	margin-left: auto ;
+ 	margin-right: auto ;	
+	background-color: #282320;
+	text-align: center;
+    box-shadow: 10px 10px 5px #888888;
+    text-shadow: #afe222 1px 1px, #000 2px 2px, #000 3px 3px;
+    border-radius: 25px;
+}
+
+.titleB {	
+    border-radius: 25px;
+	width: 900px;
+  	margin-left: auto ;
+ 	margin-right: auto ;	
+	background-color: #282320;
+	text-align: center;
+    box-shadow: 10px 10px 5px #888888;
+    text-shadow: #afe222 1px 1px, #000 2px 2px, #000 3px 3px;
+}
+
+.contentA {
+    border-radius: 25px;
+	width: 900px;
+  	margin-left: auto ;
+ 	margin-right: auto ;
+	background-color: #282320;
+	text-align: left;
+    box-shadow: 10px 10px 5px #888888;
+    color: white;
+    font-family: 'Roboto Mono', ;
+}
+
+.contentB {	
+    border-radius: 25px;
+	width: 900px;
+  	margin-left: auto ;
+ 	margin-right: auto ;	
+	background-color: #282320;
+	text-align: left;
+    box-shadow: 10px 10px 5px #888888;
+    color: white;
+    font-family: 'Roboto Mono', ;
+}
+
+.textMarginsNeeded{
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+p.copyright {
+	float: left;
+	width: 98%;
+	position: fixed;
+	bottom: 0;
+    text-align: right;
+    z-index: 999;
+}
+
+.video {	
+	width: 900px;
+  	margin-left: auto ;
+ 	margin-right: auto ;
+ 	height: 550px;
+ 	padding-bottom: 0px;
+}
+
+iframe {
+	padding-bottom: 0px;
+ 	background-color: black;
+}
+
+.animation {
+	z-index: 999;
+	position: relative;
+}
+
+h2, p {
+	font-size: 100%;
+	font-weight: normal;
+	text-decoration: none;
+	color: black;
+}
+
+h2 {	
+  font-size:140%;
+  font-weight:bold;
+  padding-bottom:10px;
+	color: black;
+}
+
+input[type=text] {
+	background: transparent;
+	border: none;
+	font-style: scribbly;
+}
+
+a.sticky {
+	font-style: scribbly;
+	text-decoration: none;
+	color: #000;
+	background: #ffc;
+	display: block;
+	height: 15em;
+	width: 15em;
+	padding: 1em;
+	float: right;
+	margin: 2em; 
+	 /* Firefox */
+  -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
+  /* Safari+Chrome */
+  -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  /* Opera */
+  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  -webkit-transform:rotate(5deg);
+  -o-transform:rotate(5deg);
+  -moz-transform:rotate(5deg);
+  -moz-transition:-moz-transform .15s linear;
+  -o-transition:-o-transform .15s linear;
+  -webkit-transition:-webkit-transform .15s linear;
+	color: black;
+}
+
+a.sticky:hover, a.sticky:focus {
+	font-style: scribbly;
+	-moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  	-webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
+ 	 box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  	-webkit-transform: scale(1.25);
+  	-moz-transform: scale(1.25);
+  	-o-transform: scale(1.25);
+  	position:relative;
+  	z-index:5;
+	color: black;
+}
+
+
+.downloadLink {
+	width: 900px;
+  	margin-left: auto ;
+ 	margin-right: auto ;	
+	background-color: #282320;
+	text-align: center;
+    border-radius: 25px;
+}
+
+.sidebar {
+	float: left;
+	position: fixed;
+	background-color: #282320;
+  	border-radius: 4px;
+  	box-shadow: 0 0 10px rgba(0,0,0,.15);
+  	overflow: hidden;
+  	text-align: center;
+    box-shadow: 10px 10px 5px #888888;
+    margin-left: 10px;   
+    border-radius: 25px; 
+}
+
+
+.sidebartab {
+	width: 110%;
+	background-color: #71635B;
+	margin-bottom: 5px;
+	border-radius: 25px;
+}
+
+.sidebartab:hover {
+  	-webkit-transform: scale(1.1);
+  	-moz-transform: scale(1.1);
+  	-o-transform: scale(1.1);
+  	position:relative;
+  	z-index:5;
+}
+
+.sideBarMargins {	
+	margin-left: 15px;
+	margin-right: 50px;
+}
+
+.codeSection {
+	height: 600px;
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+	overflow-y: scroll;
+}
+
+.numbersOfCode {
+	float: left;
+}
+
+.titleC {
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #282320;
+	border-radius: 25px;		
+    box-shadow: 10px 10px 5px #888888;
+}
+
+.titleResume {
+	color: white;
+	background-color: #282320;
+	width: 40%;
+	height: 10%;
+	margin-left: 30%;
+	margin-right: 30%;
+	margin-top: 0.5%;
+	border-radius: 25px;
+	font-size: 4vh;
+	text-align: center;
+    box-shadow: 10px 10px 5px #888888;
+    overflow: hidden;
+}
+
+.infoResumeLeft {
+	background-color: #282320;
+	width: 19.25%;
+	height: 3.5%;
+	float: left;
+	margin-top: 0.5%;
+	margin-left: 30%;
+	margin-right: 0.75%;
+	border-radius: 25px;
+	text-align: center;
+	font-size: 2vh;
+    box-shadow: 10px 10px 5px #888888;
+	color: white;
+    overflow: hidden;
+}
+
+.infoResumeRight {
+	background-color: #282320;
+	width: 19.25%;
+	height: 3.5%;
+	float: left;
+	margin-top: 0.5%;
+	margin-left: 0.75%;
+	margin-right: 30%;
+	border-radius: 25px;
+	text-align: center;
+	font-size: 2vh;
+    box-shadow: 10px 10px 5px #888888;
+	color: white;
+    overflow: hidden;
+}
+
+.summaryResume {
+	background-color: #282320;
+	border-radius: 25px;
+	width: 25%;
+	height: 75%;
+	margin-top: 2%;
+	margin-left: 2.5%;
+	margin-right: 2.5%;
+	float: left;	
+    box-shadow: 10px 10px 5px #888888;
+}
+
+.titleSummaryResume {
+	width: 80%;
+	height: 10%;
+	background-color: white; /*#FF8F4C*/
+	margin-right: 10%;
+	margin-left: 10%;
+	margin-top: 5%; 
+	border-radius: 25px;
+	text-align: center;
+	font-size: 4.6vh;
+    overflow: hidden;
+}
+
+.normalTextSummaryResume {
+	text-align: left;
+	float: left;
+	margin-left: 10%;
+	width: 83%;
+	margin-top: 7%;
+	font-size: 2.2vh;
+	color: white;
+    overflow: hidden;
+}
+
+.languageContainer {
+	width: 80%;
+	margin-right: 10%;
+	margin-left: 10%;
+}
+
+.language {
+	width: 25%;
+	height: 8%;
+	float: left;
+	margin-left: 2.5%;
+	margin-right: 2.5%;
+	margin-top: 4%;
+	text-align: center;
+	border-radius: 25px;
+	font-size: 2.8vh;
+	color: white;
+	line-height: -10px;
+    overflow: hidden;
+}
+
+.language:hover {
+  	-webkit-transform: scale(1.1);
+  	-moz-transform: scale(1.1);
+  	-o-transform: scale(1.1);
+  	position:relative;
+  	z-index:5;
+}
+
+.experienceResume {	
+	background-color: #282320;
+	border-radius: 25px;
+	width: 65%;
+	height: 60%;
+	margin-top: 2%;
+	margin-right: 5%;
+	float: left;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+.prevDesc {
+	background-color: #333333;
+	border-radius: 25px;	
+    box-shadow: 10px 10px 5px #888888;
+    width: 400px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: left;
+}
+
+.titleExperience {
+	color: white;
+	margin-left: 30px;
+	margin-top: 25px;
+	font-size: 1.5vw;
+	color: white;
+	font-weight: bold;
+	overflow: hidden;
+}
+
+span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;      
+}
+
+@font-face {
+ font-family: MyCustomFont;
+ src: url("Clarendon_Bold.eot") /* EOT file for IE */
+}
+@font-face {
+ font-family: MyCustomFont;
+ src: url("Clarendon Bold.ttf") /* TTF file for CSS3 browsers */
+}
+
+@font-face {
+ font-family: textFont;
+ src: url("ufonts.com_newbaskerville__2_.eot") /* EOT file for IE */
+}
+@font-face {
+ font-family: textFont;
+ src: url("ufonts.com_newbaskerville.ttf") /* TTF file for CSS3 browsers */
+}
+
+@font-face {
+ font-family: scribbly;
+ src: url("Scribble_Hand.eot") /* EOT file for IE */
+}
+@font-face {
+ font-family: scribbly;
+ src: url("Scribble_Hand.ttf") /* TTF file for CSS3 browsers */
+}
+
+
+@media screen and (max-width: 1432px){
+	.language {
+		font-size: 2.2vh;
+	}
+}
+
+@media screen and (max-width: 1117px){
+	.language {
+		font-size: 1.9vh;
+	}
+}
+
+@media screen and (max-width: 1117px){
+	.language {
+		font-size: 1.6vh;
+	}
+}
+
+@media screen and (max-width: 765px){
+	.infoResumeLeft {
+		font-size: 1.2vh;
+	}
+
+	.infoResumeRight {
+		font-size: 1.2vh;		
+	}
+	.language {		
+		font-size: 1.2vh;
+	}
+}
+
+@media screen and (max-width: 635px){
+	.language {
+		font-size: 0.9vh;
+	}
+}
+
+@media screen and (max-width: 474px){
+	.language {
+		font-size: 0.6vh;
+	}
+}
