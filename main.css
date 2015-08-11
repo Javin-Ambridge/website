@@ -393,12 +393,25 @@ a.sticky:hover, a.sticky:focus {
 
 .titleExperience {
 	color: white;
-	margin-left: 30px;
+	margin-left: 6%;
 	margin-top: 25px;
 	font-size: 1.5vw;
 	color: white;
 	font-weight: bold;
 	overflow: hidden;
+}
+
+.contentExperience pre {
+	color: white;
+	font-size: 1vw;
+	margin-left: 12%; 
+	background-color: #282320;
+	margin-right: 4%;
+}
+
+.contentExperience pre li {
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 span {
