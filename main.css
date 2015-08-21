@@ -267,7 +267,7 @@ a.sticky:hover, a.sticky:focus {
 	margin-right: 30%;
 	margin-top: 0.5%;
 	border-radius: 25px;
-	font-size: 4vh;
+	font-size: 3vw;
 	text-align: center;
     box-shadow: 10px 10px 5px #888888;
     overflow: hidden;
@@ -304,16 +304,15 @@ a.sticky:hover, a.sticky:focus {
 	color: white;
     overflow: hidden;
 }
-
 .summaryResume {
 	background-color: #282320;
+	position: fixed;
 	border-radius: 25px;
 	width: 25%;
-	height: 75%;
-	margin-top: 2%;
-	margin-left: 2.5%;
+	height: 35vw;
+	margin-top: 4%;
+	margin-left: 2.2%;
 	margin-right: 2.5%;
-	float: left;	
     box-shadow: 10px 10px 5px #888888;
 }
 
@@ -326,7 +325,7 @@ a.sticky:hover, a.sticky:focus {
 	margin-top: 5%; 
 	border-radius: 25px;
 	text-align: center;
-	font-size: 4.6vh;
+	font-size: 2.6vw;
     overflow: hidden;
 }
 
@@ -336,7 +335,7 @@ a.sticky:hover, a.sticky:focus {
 	margin-left: 10%;
 	width: 83%;
 	margin-top: 7%;
-	font-size: 2.2vh;
+	font-size: 1vw;
 	color: white;
     overflow: hidden;
 }
@@ -356,7 +355,7 @@ a.sticky:hover, a.sticky:focus {
 	margin-top: 4%;
 	text-align: center;
 	border-radius: 25px;
-	font-size: 2.8vh;
+	font-size: 2.5vh;
 	color: white;
 	line-height: -10px;
     overflow: hidden;
@@ -370,14 +369,29 @@ a.sticky:hover, a.sticky:focus {
   	z-index:5;
 }
 
+.headingTitle {
+	float: right;
+	width: 12%;
+	height: 5%;
+	margin-right: 58%;
+	margin-top: 2%;
+	font-size: 1.5vw;
+	background-color: white;
+	color: black;
+	border-radius: 25px;
+	font-weight: bold;
+    box-shadow: 10px 10px 5px #888888;
+    text-align: center;
+    overflow: hidden;
+}
+
 .experienceResume {	
 	background-color: #282320;
 	border-radius: 25px;
 	width: 65%;
-	height: 60%;
-	margin-top: 2%;
+	margin-top: 1%;
 	margin-right: 5%;
-	float: left;
+	float: right;
     box-shadow: 10px 10px 5px #888888;
 }
 
@@ -401,17 +415,18 @@ a.sticky:hover, a.sticky:focus {
 	overflow: hidden;
 }
 
-.contentExperience pre {
+.contentExperience {
 	color: white;
 	font-size: 1vw;
-	margin-left: 12%; 
+	margin-left: 9%; 
 	background-color: #282320;
 	margin-right: 4%;
 }
 
-.contentExperience pre li {
-	margin-top: 0;
-	margin-bottom: 0;
+.addBold {
+	font-size: 1.5vw;
+	color: white;
+	margin-left: 4%;
 }
 
 span {
@@ -420,37 +435,12 @@ span {
   line-height: normal;      
 }
 
-@font-face {
- font-family: MyCustomFont;
- src: url("Clarendon_Bold.eot") /* EOT file for IE */
-}
-@font-face {
- font-family: MyCustomFont;
- src: url("Clarendon Bold.ttf") /* TTF file for CSS3 browsers */
-}
-
-@font-face {
- font-family: textFont;
- src: url("ufonts.com_newbaskerville__2_.eot") /* EOT file for IE */
-}
-@font-face {
- font-family: textFont;
- src: url("ufonts.com_newbaskerville.ttf") /* TTF file for CSS3 browsers */
-}
-
-@font-face {
- font-family: scribbly;
- src: url("Scribble_Hand.eot") /* EOT file for IE */
-}
-@font-face {
- font-family: scribbly;
- src: url("Scribble_Hand.ttf") /* TTF file for CSS3 browsers */
-}
-
-
 @media screen and (max-width: 1432px){
 	.language {
 		font-size: 2.2vh;
+	}
+	.summaryResume {		
+		height: 37vw;
 	}
 }
 
