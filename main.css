@@ -34,7 +34,7 @@ p.small {
 	background-color: #edce60;
 	position: fixed;
 	width: 100%;
-	overflow-y: auto; 
+	overflow-y: auto;
 	height: 90%;
 }
 
@@ -43,7 +43,7 @@ p.small {
 	background-color: #D6F39B;
 	position: fixed;
 	width: 100%;
-	overflow-y: auto; 
+	overflow-y: auto;
 	height: 90%;
 }
 
@@ -52,14 +52,14 @@ p.small {
 	background-color: #7CB5FF;
 	position: fixed;
 	width: 100%;
-	overflow-y: auto; 
+	overflow-y: auto;
 	height: 90%;
 }
 
 .titleA {
 	width: 900px;
   	margin-left: auto ;
- 	margin-right: auto ;	
+ 	margin-right: auto ;
 	background-color: #282320;
 	text-align: center;
     box-shadow: 10px 10px 5px #888888;
@@ -67,11 +67,11 @@ p.small {
     border-radius: 25px;
 }
 
-.titleB {	
+.titleB {
     border-radius: 25px;
 	width: 900px;
   	margin-left: auto ;
- 	margin-right: auto ;	
+ 	margin-right: auto ;
 	background-color: #282320;
 	text-align: center;
     box-shadow: 10px 10px 5px #888888;
@@ -90,11 +90,11 @@ p.small {
     font-family: 'Roboto Mono', ;
 }
 
-.contentB {	
+.contentB {
     border-radius: 25px;
 	width: 900px;
   	margin-left: auto ;
- 	margin-right: auto ;	
+ 	margin-right: auto ;
 	background-color: #282320;
 	text-align: left;
     box-shadow: 10px 10px 5px #888888;
@@ -112,11 +112,12 @@ p.copyright {
 	width: 98%;
 	position: fixed;
 	bottom: 0;
-    text-align: right;
-    z-index: 999;
+  text-align: right;
+  z-index: 999;
+  padding-bottom: 10px;
 }
 
-.video {	
+.video {
 	width: 900px;
   	margin-left: auto ;
  	margin-right: auto ;
@@ -141,7 +142,7 @@ h2, p {
 	color: black;
 }
 
-h2 {	
+h2 {
   font-size:140%;
   font-weight:bold;
   padding-bottom:10px;
@@ -164,7 +165,7 @@ a.sticky {
 	width: 15em;
 	padding: 1em;
 	float: right;
-	margin: 2em; 
+	margin: 2em;
 	 /* Firefox */
   -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
   /* Safari+Chrome */
@@ -197,7 +198,7 @@ a.sticky:hover, a.sticky:focus {
 .downloadLink {
 	width: 900px;
   	margin-left: auto ;
- 	margin-right: auto ;	
+ 	margin-right: auto ;
 	background-color: #282320;
 	text-align: center;
     border-radius: 25px;
@@ -212,8 +213,8 @@ a.sticky:hover, a.sticky:focus {
   	overflow: hidden;
   	text-align: center;
     box-shadow: 10px 10px 5px #888888;
-    margin-left: 10px;   
-    border-radius: 25px; 
+    margin-left: 10px;
+    border-radius: 25px;
 }
 
 
@@ -232,7 +233,7 @@ a.sticky:hover, a.sticky:focus {
   	z-index:5;
 }
 
-.sideBarMargins {	
+.sideBarMargins {
 	margin-left: 15px;
 	margin-right: 50px;
 }
@@ -254,7 +255,7 @@ a.sticky:hover, a.sticky:focus {
 	margin-left: auto;
 	margin-right: auto;
 	background-color: #282320;
-	border-radius: 25px;		
+	border-radius: 25px;
     box-shadow: 10px 10px 5px #888888;
 }
 
@@ -322,7 +323,7 @@ a.sticky:hover, a.sticky:focus {
 	background-color: white; /*#FF8F4C*/
 	margin-right: 10%;
 	margin-left: 10%;
-	margin-top: 5%; 
+	margin-top: 5%;
 	border-radius: 25px;
 	text-align: center;
 	font-size: 2.6vw;
@@ -385,19 +386,19 @@ a.sticky:hover, a.sticky:focus {
     overflow: hidden;
 }
 
-.experienceResume {	
+.experienceResume {
 	background-color: #282320;
 	border-radius: 25px;
 	width: 65%;
 	margin-top: 1%;
 	margin-right: 5%;
 	float: right;
-    box-shadow: 10px 10px 5px #888888;
+  box-shadow: 10px 10px 5px #888888;
 }
 
 .prevDesc {
 	background-color: #333333;
-	border-radius: 25px;	
+	border-radius: 25px;
     box-shadow: 10px 10px 5px #888888;
     width: 400px;
     margin-right: auto;
@@ -418,28 +419,44 @@ a.sticky:hover, a.sticky:focus {
 .contentExperience {
 	color: white;
 	font-size: 1vw;
-	margin-left: 9%; 
+	margin-left: 9%;
 	background-color: #282320;
 	margin-right: 4%;
 }
 
+.jobTitle {
+  color: white;
+  font-size: 1.2vw;
+  margin-left: 6%;
+  padding-bottom: 8px;
+  font-weight: bold;
+}
+
 .addBold {
-	font-size: 1.5vw;
+	font-size: 2vw;
 	color: white;
 	margin-left: 4%;
+}
+
+.addDate {
+  color: white;
+  font-size: 1.2vw;
+  float: right;
+  margin-right: 4%;
+  margin-top: -35px;
 }
 
 span {
   display: inline-block;
   vertical-align: middle;
-  line-height: normal;      
+  line-height: normal;
 }
 
 @media screen and (max-width: 1432px){
 	.language {
 		font-size: 2.2vh;
 	}
-	.summaryResume {		
+	.summaryResume {
 		height: 37vw;
 	}
 }
@@ -462,9 +479,9 @@ span {
 	}
 
 	.infoResumeRight {
-		font-size: 1.2vh;		
+		font-size: 1.2vh;
 	}
-	.language {		
+	.language {
 		font-size: 1.2vh;
 	}
 }

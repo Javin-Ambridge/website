@@ -33,6 +33,11 @@ function addLanguageColors(){
 	document.getElementById("navPrWork").style.paddingTop = "20px";
 	document.getElementById("navAbout").style.fontSize = "15px";
 	document.getElementById("navAbout").style.paddingTop = "20px";
+	document.getElementById("volunteerWork").style.width = "16%";
+	document.getElementById("volunteerWork").style.marginRight = "54%";
+	document.getElementById("addSpace").style.background = "#7CB5FF";
+	document.getElementById("addSpace").style.color = "#7CB5FF";
+	document.getElementById("addSpace").style.boxShadow = "10px 20px 30px #7CB5FF";
 	var count = 0;
 	while(count < 10){
 		console.log("Height of browser: " + $(window).height() + ", Width of browser: " +$(window).width());

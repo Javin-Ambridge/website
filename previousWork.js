@@ -12,15 +12,15 @@ function addNumbers(){
 
 	for(i = 1; i <= 118; i++){
 		if(i != 118)
-			lst = lst + i + "<br>"; 
+			lst = lst + i + "<br>";
 		else if(i == 1)
 			lst = i + "<br>";
 		else
 			lst = lst + i;
-	}	
+	}
 	for(i = 1; i <= 44; i++){
 		if(i != 44)
-			lst2 = lst2 + i + "<br>"; 
+			lst2 = lst2 + i + "<br>";
 		else if(i == 1)
 			lst2 = i + "<br>";
 		else
@@ -28,7 +28,7 @@ function addNumbers(){
 	}
 	for(i = 1; i <= 62; i++){
 		if(i != 62)
-			lst3 = lst3 + i + "<br>"; 
+			lst3 = lst3 + i + "<br>";
 		else if(i == 1)
 			lst3 = i + "<br>";
 		else
@@ -59,17 +59,3 @@ $("#physDown").mousedown(function() {
 		console.log("incorrect password");
 	}
 });
-
-
-$("#alchDown").mousedown(function() {
-	var pass = prompt("Please enter the password to download this file\nYou can get this password by contacting me!", "Put password here!");
-	if(pass == password){
-		console.log("correct password");
-		window.location = "Alchemy.zip";
-	}else{
-		console.log("incorrect password");
-	}
-});
-
-
-
