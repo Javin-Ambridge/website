@@ -38,7 +38,6 @@ function addLanguageColors(){
 	document.getElementById("language9").style.background = grabColour();
 	document.getElementById("reducedHeight").style.margin = "5% 0% 0% 10%";
 	document.getElementById("language10").style.background = grabColour();
-	document.getElementById("language11").style.background = grabColour();
 	document.getElementById("navName").style.fontSize = "25px";
 	document.getElementById("navName").style.paddingTop = "16px";
 	document.getElementById("navPrWork").style.fontSize = "15px";
