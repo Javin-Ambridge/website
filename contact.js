@@ -1,5 +1,3 @@
-var colors = ["#5346B3", "#32A88A", "#FFA719", "#3D6DAA", "#806915"]
-
 $(document).ready(function() {
 	addLanguageColors();
 	var width = $('#titleResume').width();
@@ -10,23 +8,37 @@ $(document).ready(function() {
     console.log("new height: " + height);
 });
 
+function outerFunction(){
+		var c = ["#5346B3", "#3D6DAA", "#FFA719", "#32A88A"];
+		var place = 0;
+		return function addColor(){
+			var tmp = c[place];
+			if(place == 3){
+				place = 0;
+			}else{
+				place++;
+			}
+			return tmp;
+		}
+}
+
 function addLanguageColors(){
-	document.getElementById("language1").style.background = colors[0];
-	document.getElementById("language2").style.background = colors[3];
-	document.getElementById("language3").style.background = colors[2];
-	document.getElementById("language4").style.background = colors[1];
-	document.getElementById("language5").style.background = colors[0];
+	var grabColour = outerFunction();
+	document.getElementById("language1").style.background = grabColour();
+	document.getElementById("language2").style.background = grabColour();
+	document.getElementById("language3").style.background = grabColour();
+	document.getElementById("language4").style.background = grabColour();
+	document.getElementById("language5").style.background = grabColour();
 	document.getElementById("language7").style.width = "34%";
-	document.getElementById("language6").style.background = colors[3];
+	document.getElementById("language6").style.background = grabColour();
 	document.getElementById("language10").style.width = "34%";
-	document.getElementById("language7").style.background = colors[2];
+	document.getElementById("language7").style.background = grabColour();
 	document.getElementById("language2").style.width = "37%";
-	document.getElementById("language8").style.background = colors[1];
-	document.getElementById("language9").style.background = colors[0];
+	document.getElementById("language8").style.background = grabColour();
+	document.getElementById("language9").style.background = grabColour();
 	document.getElementById("reducedHeight").style.margin = "5% 0% 0% 10%";
-	document.getElementById("language10").style.background = colors[3];
-	document.getElementById("language11").style.background = colors[2];
-	document.getElementById("language12").style.background = colors[1];
+	document.getElementById("language10").style.background = grabColour();
+	document.getElementById("language11").style.background = grabColour();
 	document.getElementById("navName").style.fontSize = "25px";
 	document.getElementById("navName").style.paddingTop = "16px";
 	document.getElementById("navPrWork").style.fontSize = "15px";
