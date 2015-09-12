@@ -78,6 +78,17 @@ p.small {
     text-shadow: #afe222 1px 1px, #000 2px 2px, #000 3px 3px;
 }
 
+.titleB2 {
+  border-radius: 10px;
+	width: 900px;
+  	margin-left: auto ;
+ 	margin-right: auto ;
+	background-color: #282320;
+	text-align: center;
+    box-shadow: 10px 10px 5px #888888;
+    text-shadow: #afe222 1px 1px, #000 2px 2px, #000 3px 3px;
+}
+
 .contentA {
     border-radius: 25px;
 	width: 900px;
@@ -238,12 +249,27 @@ a.sticky:hover, a.sticky:focus {
 	margin-right: 50px;
 }
 
+.optionCodeBar {
+  width: 900px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hideOrShow {
+  float: right;
+  color: white;
+  padding-right: 25px;
+  padding-top: 5px;
+  font-size: 20px;
+}
+
 .codeSection {
 	height: 600px;
 	width: 900px;
 	margin-left: auto;
 	margin-right: auto;
-	overflow-y: scroll;
+  overflow-y: scroll;
 }
 
 .numbersOfCode {

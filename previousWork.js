@@ -1,4 +1,5 @@
 var count = 0;
+var nQueens = 1;
 var password = "javin-past-proj";
 
 $(document).ready(function() {
@@ -42,7 +43,10 @@ function addNumbers(){
 	document.getElementById("navPrWork").style.fontSize = "15px";
 	document.getElementById("navPrWork").style.paddingTop = "20px";
 	document.getElementById("navAbout").style.fontSize = "15px";
-	document.getElementById("navAbout").style.paddingTop = "20px"
+	document.getElementById("navAbout").style.paddingTop = "20px";
+	$("#codeSection1").slideUp();
+	$("#codeSection2").slideUp();
+	$("#codeSection3").slideUp();
 }
 
 function incorPass() {
@@ -57,5 +61,59 @@ $("#physDown").mousedown(function() {
 	}else{
 		incorPass();
 		console.log("incorrect password");
+	}
+});
+
+$("#openNQueens").click(function() {
+	if($("#codeSection1").is(":hidden")){
+		$("#codeSection1").show("slow");
+		$("#extraSpace").slideUp();
+		var fieldNameElement = document.getElementById("openNQueens");
+		fieldNameElement.innerHTML = "Hide";
+	}else{
+		$("#codeSection1").slideUp();
+		var o2 = $("#codeSection2").is(":visible");
+		var o3 = $("#codeSection3").is(":visible");
+		if(o2 == false && o3 == false){
+			$("#extraSpace").show("slow");
+		}
+		var fieldNameElement = document.getElementById("openNQueens");
+		fieldNameElement.innerHTML = "Show";
+	}
+});
+
+$("#openSQueue").click(function() {
+	if($("#codeSection2").is(":hidden")){
+		$("#codeSection2").show("slow");
+		$("#extraSpace").slideUp();
+		var fieldNameElement = document.getElementById("openSQueue");
+		fieldNameElement.innerHTML = "Hide";
+	}else{
+		$("#codeSection2").slideUp();
+		var o1 = $("#codeSection1").is(":visible");
+		var o3 = $("#codeSection3").is(":visible");
+		if(o1 == false && o3 == false){
+			$("#extraSpace").show("slow");
+		}
+		var fieldNameElement = document.getElementById("openSQueue");
+		fieldNameElement.innerHTML = "Show";
+	}
+});
+
+$("#openSudoku").click(function() {
+	if($("#codeSection3").is(":hidden")){
+		$("#codeSection3").show("slow");
+		$("#extraSpace").slideUp();
+		var fieldNameElement = document.getElementById("openSudoku");
+		fieldNameElement.innerHTML = "Hide";
+	}else{
+		$("#codeSection3").slideUp();
+		var o1 = $("#codeSection1").is(":visible");
+		var o2 = $("#codeSection2").is(":visible");
+		if(o1 == false && o2 == false){
+			$("#extraSpace").show("slow");
+		}
+		var fieldNameElement = document.getElementById("openSudoku");
+		fieldNameElement.innerHTML = "Show";
 	}
 });

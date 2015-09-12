@@ -64,3 +64,7 @@ $(window).resize(function(){
 	$("#titleResume").css("font-size", "" + height + "px");
     console.log("new height: " + height);
 });
+
+$("#language2").click(function() {
+		console.log("how far left: " + document.getElementById("language2").style.left);
+});
