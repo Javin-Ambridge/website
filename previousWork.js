@@ -66,25 +66,36 @@ $("#physDown").mousedown(function() {
 
 $("#openNQueens").click(function() {
 	if($("#codeSection1").is(":hidden")){
-		$("#codeSection1").show("slow");
+		$("#codeSection1").show("slow", function() {
+			$("#b").scrollTop(3077);
+		});
 		$("#extraSpace").slideUp();
+		//$('html, body, b').animate({scrollTop: 200}, 2000);
 		var fieldNameElement = document.getElementById("openNQueens");
 		fieldNameElement.innerHTML = "Hide";
 	}else{
 		$("#codeSection1").slideUp();
 		var o2 = $("#codeSection2").is(":visible");
 		var o3 = $("#codeSection3").is(":visible");
-		if(o2 == false && o3 == false){
+		if(o2 === false && o3 === false){
 			$("#extraSpace").show("slow");
 		}
-		var fieldNameElement = document.getElementById("openNQueens");
-		fieldNameElement.innerHTML = "Show";
+		var fieldNameElement1 = document.getElementById("openNQueens");
+		fieldNameElement1.innerHTML = "Show";
 	}
 });
 
 $("#openSQueue").click(function() {
 	if($("#codeSection2").is(":hidden")){
-		$("#codeSection2").show("slow");
+		var o4 = $("#codeSection1").is(":visible");
+		var o5 = $("#codeSection3").is(":visible");
+		$("#codeSection2").show("slow", function() {
+			if(o4 === false && o5 === true){
+				$("#b").scrollTop(3151);					
+			}else{
+				$("#b").scrollTop(3754);
+			}
+		});
 		$("#extraSpace").slideUp();
 		var fieldNameElement = document.getElementById("openSQueue");
 		fieldNameElement.innerHTML = "Hide";
@@ -92,17 +103,19 @@ $("#openSQueue").click(function() {
 		$("#codeSection2").slideUp();
 		var o1 = $("#codeSection1").is(":visible");
 		var o3 = $("#codeSection3").is(":visible");
-		if(o1 == false && o3 == false){
+		if(o1 === false && o3 === false){
 			$("#extraSpace").show("slow");
 		}
-		var fieldNameElement = document.getElementById("openSQueue");
-		fieldNameElement.innerHTML = "Show";
+		var fieldNameElement2 = document.getElementById("openSQueue");
+		fieldNameElement2.innerHTML = "Show";
 	}
 });
 
 $("#openSudoku").click(function() {
 	if($("#codeSection3").is(":hidden")){
-		$("#codeSection3").show("slow");
+		$("#codeSection3").show("slow", function() {
+			$("#b").scrollTop(4233);
+		});
 		$("#extraSpace").slideUp();
 		var fieldNameElement = document.getElementById("openSudoku");
 		fieldNameElement.innerHTML = "Hide";
@@ -110,10 +123,37 @@ $("#openSudoku").click(function() {
 		$("#codeSection3").slideUp();
 		var o1 = $("#codeSection1").is(":visible");
 		var o2 = $("#codeSection2").is(":visible");
-		if(o1 == false && o2 == false){
+		if(o1 === false && o2 === false){
 			$("#extraSpace").show("slow");
 		}
-		var fieldNameElement = document.getElementById("openSudoku");
-		fieldNameElement.innerHTML = "Show";
+		var fieldNameElement3 = document.getElementById("openSudoku");
+		fieldNameElement3.innerHTML = "Show";
 	}
+});
+
+function scrollPosition(a){
+		var o1 = $("#codeSection1").is(":visible");
+		var o2 = $("#codeSection2").is(":visible");
+		var o3 = $("#codeSection3").is(":visible");
+		if(a == 1){
+			if(o2 === false && o3 === false){
+				return 3034;
+			}if(o2 === true && o3 === false){
+				return 3065;
+			}if(o2 === true && o3 === true){
+				return 3077;
+			}if(o2 === false && o3 === true){
+				return 3077;
+			}
+		}else if(a == 2){
+
+		}else{
+
+		}
+}
+
+$("body").keydown(function(e) {
+  if(e.keyCode == 37) { // left
+    console.log("scroll position: " + $("#b").scrollTop());
+  }
 });
