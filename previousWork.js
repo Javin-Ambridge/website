@@ -67,10 +67,9 @@ $("#physDown").mousedown(function() {
 $("#openNQueens").click(function() {
 	if($("#codeSection1").is(":hidden")){
 		$("#codeSection1").show("slow", function() {
-			$("#b").scrollTop(3077);
+			$("#b").scrollTop(($("#codeSection1").offset().top - 150) + $("#b").scrollTop());
 		});
 		$("#extraSpace").slideUp();
-		//$('html, body, b').animate({scrollTop: 200}, 2000);
 		var fieldNameElement = document.getElementById("openNQueens");
 		fieldNameElement.innerHTML = "Hide";
 	}else{
@@ -90,11 +89,7 @@ $("#openSQueue").click(function() {
 		var o4 = $("#codeSection1").is(":visible");
 		var o5 = $("#codeSection3").is(":visible");
 		$("#codeSection2").show("slow", function() {
-			if(o4 === false && o5 === true){
-				$("#b").scrollTop(3151);					
-			}else{
-				$("#b").scrollTop(3754);
-			}
+			$("#b").scrollTop(($("#codeSection2").offset().top - 150) + $("#b").scrollTop());
 		});
 		$("#extraSpace").slideUp();
 		var fieldNameElement = document.getElementById("openSQueue");
@@ -114,7 +109,7 @@ $("#openSQueue").click(function() {
 $("#openSudoku").click(function() {
 	if($("#codeSection3").is(":hidden")){
 		$("#codeSection3").show("slow", function() {
-			$("#b").scrollTop(4233);
+			$("#b").scrollTop(($("#codeSection3").offset().top - 150) + $("#b").scrollTop());
 		});
 		$("#extraSpace").slideUp();
 		var fieldNameElement = document.getElementById("openSudoku");
@@ -129,31 +124,4 @@ $("#openSudoku").click(function() {
 		var fieldNameElement3 = document.getElementById("openSudoku");
 		fieldNameElement3.innerHTML = "Show";
 	}
-});
-
-function scrollPosition(a){
-		var o1 = $("#codeSection1").is(":visible");
-		var o2 = $("#codeSection2").is(":visible");
-		var o3 = $("#codeSection3").is(":visible");
-		if(a == 1){
-			if(o2 === false && o3 === false){
-				return 3034;
-			}if(o2 === true && o3 === false){
-				return 3065;
-			}if(o2 === true && o3 === true){
-				return 3077;
-			}if(o2 === false && o3 === true){
-				return 3077;
-			}
-		}else if(a == 2){
-
-		}else{
-
-		}
-}
-
-$("body").keydown(function(e) {
-  if(e.keyCode == 37) { // left
-    console.log("scroll position: " + $("#b").scrollTop());
-  }
 });
