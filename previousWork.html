@@ -26,7 +26,7 @@
   			<div class="collapse navbar-collapse">
     			<ul class="nav navbar-nav">
       				<li><a href="previousWork.html" id="navPrWork"><span class="glyphicon glyphicon-briefcase"></span> Previous Work </a></li>
-      				<li><a href="contact.html" id="navAbout"><span class="glyphicon glyphicon-sunglasses"></span> About Me!</a></li>
+      				<li><a href="contact.html" id="navAbout"><span class="glyphicon glyphicon-sunglasses"></span> About Me</a></li>
     			</ul>
     			<p class="small navbar-text">2A - Computer Science | University of Waterloo<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jmambrid@uwaterloo.ca</p>
   			</div><!-- /.navbar-collapse -->
@@ -192,7 +192,7 @@
 			</div>
 			<br>
 			<A NAME="algorithmTag"></A>
-			<div class="titleB">
+			<div class="titleB" id="titleOfSampleAlogorithm">
 				<font size="16" face="MyCustomFont" color="white"> Sample Algorithms </font>
 			</div>
 			<br><br>
@@ -357,8 +357,293 @@ int sq_length(StrQueue sq){
 }
       </PRE>
     </div>
-		<div id="addSpace">
-			<br></div>
+
+			<div id="addSpace">
+				<br></div>
+			<div class="titleB2">
+				<font size="5" face="MyCustomFont" color="white"> Sudoku Solver (Fast implementation) - Created in Java</font>
+				<div class="hideOrShow" id="openSudoku1">Show</div>
+			</div>
+			<div id="addSpace">
+				<br></div>
+			<div class="codeSection" id="codeSection4">
+			<div class="numbersOfCode" id="numbers4">
+			</div>
+			<PRE style="background-color: #F7E699; width: 850px; float: right;font-family: 'Droid Sans Mono', ;font-size: 11px;">
+//Main method to solve Sudoku puzzles, it runs the fast solving method first, if its an easy puzzle to solve it will solve it
+//without backtracking.
+//This method takes in a multi dimensional array (required size of 9x9)
+private void solveSudoku(int[][] puzzle){
+	solveSudokuFastMethod(puzzle);
+	if(countEmpty(puzzle) != 0)
+		solveSudokuBacktracking(puzzle);
+}
+
+//This method of solving the sudoku puzzle looks for possible 'perfect' spots (ie. The only possible space for 4
+//in the first 3x3 grid is at row 2, col 1)
+private void solveSudokuFastMethod(int[][] puzzle){
+	int countLeft = countEmpty(puzzle);
+	int row = 0, col = 0;
+	int solvedAsMuchThisMethod = 0;
+	while(countLeft != 0){
+		solvedAsMuchThisMethod++;
+		if(solvedAsMuchThisMethod > 82){ //This method can no longer place anymore 'perfect' spots.
+			System.out.println("Solved as much as possible through just checking for possible places.
+			Starting backtracking.");
+			break;
+		}
+		if(puzzle[row][col] != 0){
+			if(col == 8){
+				if(row == 8){
+					row = 0;
+					col = 0;
+					countLeft = countEmpty(puzzle);
+				}else{
+					row++;
+					col = 0;
+				}
+			}else{
+				col++;
+			}
+			continue;
+		}else{
+			int sol = perfectSolution(puzzle, row, col);
+			if(sol != 0){
+				puzzle[row][col] = sol;
+				solvedAsMuchThisMethod = 0;
+				if(col == 8){
+					if(row == 8){
+						row = 0;
+						col = 0;
+						countLeft = countEmpty(puzzle);
+					}else{
+						row++;
+						col = 0;
+					}
+				}else{
+					col++;
+				}
+				continue;
+			}else{
+				if(col == 8){
+					if(row == 8){
+						row = 0;
+						col = 0;
+						countLeft = countEmpty(puzzle);
+					}else{
+						row++;
+						col = 0;
+					}
+				}else{
+					col++;
+				}
+				continue;
+			}
+		}
+	}
+}
+
+//When the fast method has solved as much as possible without solving it, we continue the puzzle using backtracking now.
+private void solveSudokuBacktracking(int[][] puzzle){
+	int[][] hardPositions = new int[9][9];
+	for(int y = 0; y < 9; y++){
+		for(int x = 0; x < 9; x++){
+			hardPositions[y][x] = puzzle[y][x];
+		}
+	}
+	int row = 0, col = 0;
+	while(row < 9){
+		if(hardPositions[row][col] != 0){
+			if(col == 8){
+				row++;
+				col = 0;
+				continue;
+			}else{
+				col++;
+				continue;
+			}
+		}else{
+			boolean continueThrough = false;
+			for(int i = puzzle[row][col] + 1; i <= 9; i++){
+				if(clearToPlace(puzzle,row,col,i)){
+					puzzle[row][col] = i;
+					continueThrough = true;
+					if(col == 8){
+						row++;
+						col = 0;
+						break;
+					}else{
+						col++;
+						break;
+					}
+				}
+			}
+			if(continueThrough)
+				continue;
+			else{
+				puzzle[row][col] = 0;
+				int newY = 0, newX = 0;
+				int tmp = col - 1;
+				for(int y = row; y >= 0; y--){
+					boolean found = false;
+					for(int x = tmp; x >= 0; x--){
+						if(hardPositions[y][x] == 0){
+							newX = x;
+							newY = y;
+							found = true;
+							break;
+						}
+					}
+					if(found)
+						break;
+					else
+						tmp = 8;
+				}
+				row = newY;
+				col = newX;
+			}
+		}
+	}
+}
+
+//This method searchs the board to see if there is a possible perfect position for that row and column.
+private int perfectSolution(int[][] puzzle, int row, int col){
+	for(int i = 1; i <= 9; i++){
+		if(possibleNum(puzzle, row, col, i)){
+			return i;
+		}
+	}
+	return 0;
+}
+
+//This method checks to see if a number can be placed down (used in backtracking,
+//just checks no hits up/down/in the 3x3 grid)
+private boolean clearToPlace(int[][] puzzle, int row, int col, int numberToPlace){
+	if(horVerClear(puzzle,row,col,numberToPlace)){
+		int rS = getStartAndEnd(row,1), rE = getStartAndEnd(row, 2);
+		int cS = getStartAndEnd(col,1), cE = getStartAndEnd(col,2);
+		for(int y = rS; y <= rE; y++){
+			for(int x = cS; x <= cE; x++){
+				if(puzzle[y][x] == numberToPlace)
+					return false;
+			}
+		}
+		return true;
+	}else
+		return false;
+}
+
+//Checking to see if the number i can be perfectly placed in that 3x3 grid.
+private boolean possibleNum(int[][] puzzle, int row, int col, int numberToPlace){
+	int startRow = getStartAndEnd(row,1);
+	int endRow = getStartAndEnd(row,2);
+	int startCol = getStartAndEnd(col,1);
+	int endCol = getStartAndEnd(col,2);
+	int count = 8;
+	for(int y = startRow; y <= endRow; y++){
+		for(int x = startCol; x <= endCol; x++){
+			if(y == row && x == col){
+				if(canGoHere(puzzle, y, x, numberToPlace)){
+					continue;
+				}else{
+					return false;
+				}
+			}
+			else{
+				if(numberToPlace == puzzle[y][x] || canGoHere(puzzle, y, x, numberToPlace)){
+					return false;
+				}else{
+					count--;
+				}
+			}
+		}
+	}
+	if(count == 0)
+		return true;
+	else
+		return false;
+}
+
+//Checks to see if there is no collisions (only up/down)
+private boolean canGoHere(int[][] puzzle, int row, int col, int numberToPlace){
+	if(puzzle[row][col] != 0)
+		return false;
+	if(horVerClear(puzzle, row, col, numberToPlace))
+		return true;
+	else
+		return false;
+}
+
+//Checks the horizontal and vertical directions to see if there are any collisions.
+private boolean horVerClear(int[][] puzzle, int row, int col, int numberToPlace){
+	if(row - 1 >= 0){
+		for(int y = row - 1; y >= 0; y--){
+			if(puzzle[y][col] == numberToPlace){
+				return false;
+			}
+		}
+	}
+	if(row + 1 < 9){
+		for(int y = row + 1; y < 9; y++){
+			if(puzzle[y][col] == numberToPlace){
+				return false;
+			}
+		}
+	}
+	if(col - 1 >= 0){
+		for(int x = col - 1; x >= 0; x--){
+			if(puzzle[row][x] == numberToPlace){
+				return false;
+			}
+		}
+	}
+	if(col + 1 < 9){
+		for(int x = col + 1; x < 9; x++){
+			if(puzzle[row][x] == numberToPlace){
+				return false;
+			}
+		}
+	}
+	return true;
+}
+
+//Grabs the start and end of 3x3 grid.
+private int getStartAndEnd(int row, int startOrEnd){
+	if(row >= 0 && row <= 2){
+		if(startOrEnd == 1)
+			return 0;
+		else
+			return 2;
+	}else if(row >= 3 && row <= 5){
+		if(startOrEnd == 1)
+			return 3;
+		else
+			return 5;
+	}else if(row >= 6 && row <= 8){
+		if(startOrEnd == 1)
+			return 6;
+		else
+			return 8;
+	}
+	return 9;
+}
+
+//Counts how many empty spaces there are on the board.
+private int countEmpty(int[][] puzzle){
+	int tmp = 0;
+	for(int row = 0; row < 9; row++){
+		for(int col = 0; col < 9; col++){
+			if(puzzle[row][col] == 0)
+				tmp++;
+		}
+	}
+	return tmp;
+}
+			</PRE>
+			</div>
+
+			<div id="addSpace">
+				<br></div>
       <div class="titleB2">
         <font size="5" face="MyCustomFont" color="white"> Soduku Solver - Created in Scheme (Dr.Racket) </font>
 				<div class="hideOrShow" id="openSudoku">Show</div>
@@ -529,8 +814,7 @@ int sq_length(StrQueue sq){
 			<div id="addSpace">
 				<br></div>
 				<div id="extraSpace">
-				<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-				<br><br><br><br>
+				<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 			</div>
 		</div>
 		 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

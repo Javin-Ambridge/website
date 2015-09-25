@@ -19,7 +19,7 @@ function outerFunction(){
 				place++;
 			}
 			return tmp;
-		}
+		};
 }
 
 function addLanguageColors(){
