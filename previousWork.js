@@ -10,6 +10,7 @@ function addNumbers(){
 	var lst = 0;
 	var lst2 = 0;
 	var lst3 = 0;
+	var lst4 = 0;
 
 	for(i = 1; i <= 118; i++){
 		if(i != 118)
@@ -35,9 +36,18 @@ function addNumbers(){
 		else
 			lst3 = lst3 + i;
 	}
+	for(i = 1; i <= 203; i++){
+		if(i != 203)
+			lst4 = lst4 + i + "<br>";
+		else if(i == 1)
+			lst4 = i + "<br>";
+		else
+			lst4 = lst4 + i;
+	}
 	document.getElementById("numbers1").innerHTML = lst;
 	document.getElementById("numbers2").innerHTML = lst2;
 	document.getElementById("numbers3").innerHTML = lst3;
+	document.getElementById("numbers4").innerHTML = lst4;
 	document.getElementById("navName").style.fontSize = "25px";
 	document.getElementById("navName").style.paddingTop = "16px";
 	document.getElementById("navPrWork").style.fontSize = "15px";
@@ -47,6 +57,7 @@ function addNumbers(){
 	$("#codeSection1").slideUp();
 	$("#codeSection2").slideUp();
 	$("#codeSection3").slideUp();
+	$("#codeSection4").slideUp();
 }
 
 function incorPass() {
@@ -76,8 +87,11 @@ $("#openNQueens").click(function() {
 		$("#codeSection1").slideUp();
 		var o2 = $("#codeSection2").is(":visible");
 		var o3 = $("#codeSection3").is(":visible");
-		if(o2 === false && o3 === false){
-			$("#extraSpace").show("slow");
+		var o4 = $("#codeSection4").is(":visible");
+		if(o2 === false && o3 === false && o4 === false){
+			$("#extraSpace").show("slow", function() {
+				$("#b").scrollTop(($("#titleOfSampleAlogorithm").offset().top - 100) + $("#b").scrollTop());
+			});
 		}
 		var fieldNameElement1 = document.getElementById("openNQueens");
 		fieldNameElement1.innerHTML = "Show";
@@ -86,8 +100,6 @@ $("#openNQueens").click(function() {
 
 $("#openSQueue").click(function() {
 	if($("#codeSection2").is(":hidden")){
-		var o4 = $("#codeSection1").is(":visible");
-		var o5 = $("#codeSection3").is(":visible");
 		$("#codeSection2").show("slow", function() {
 			$("#b").scrollTop(($("#codeSection2").offset().top - 150) + $("#b").scrollTop());
 		});
@@ -98,11 +110,37 @@ $("#openSQueue").click(function() {
 		$("#codeSection2").slideUp();
 		var o1 = $("#codeSection1").is(":visible");
 		var o3 = $("#codeSection3").is(":visible");
-		if(o1 === false && o3 === false){
-			$("#extraSpace").show("slow");
+		var o4 = $("#codeSection4").is(":visible");
+		if(o1 === false && o3 === false && o4 === false){
+			$("#extraSpace").show("slow", function() {
+				$("#b").scrollTop(($("#titleOfSampleAlogorithm").offset().top - 100) + $("#b").scrollTop());
+			});
 		}
 		var fieldNameElement2 = document.getElementById("openSQueue");
 		fieldNameElement2.innerHTML = "Show";
+	}
+});
+
+$("#openSudoku1").click(function() {
+	if($("#codeSection4").is(":hidden")){
+		$("#codeSection4").show("slow", function() {
+			$("#b").scrollTop(($("#codeSection4").offset().top - 150) + $("#b").scrollTop());
+		});
+		$("#extraSpace").slideUp();
+		var fieldNameElement = document.getElementById("openSudoku1");
+		fieldNameElement.innerHTML = "Hide";
+	}else{
+		$("#codeSection4").slideUp();
+		var o1 = $("#codeSection1").is(":visible");
+		var o2 = $("#codeSection2").is(":visible");
+		var o3 = $("#codeSection3").is(":visible");
+		if(o1 === false && o2 === false && o3 === false){
+			$("#extraSpace").show("slow", function() {
+				$("#b").scrollTop(($("#titleOfSampleAlogorithm").offset().top - 100) + $("#b").scrollTop());
+			});
+		}
+		var fieldNameElement3 = document.getElementById("openSudoku1");
+		fieldNameElement3.innerHTML = "Show";
 	}
 });
 
@@ -118,8 +156,11 @@ $("#openSudoku").click(function() {
 		$("#codeSection3").slideUp();
 		var o1 = $("#codeSection1").is(":visible");
 		var o2 = $("#codeSection2").is(":visible");
-		if(o1 === false && o2 === false){
-			$("#extraSpace").show("slow");
+		var o4 = $("#codeSection4").is(":visible");
+		if(o1 === false && o2 === false && o4 === false){
+			$("#extraSpace").show("slow", function() {
+				$("#b").scrollTop(($("#titleOfSampleAlogorithm").offset().top - 100) + $("#b").scrollTop());
+			});
 		}
 		var fieldNameElement3 = document.getElementById("openSudoku");
 		fieldNameElement3.innerHTML = "Show";
