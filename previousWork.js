@@ -64,6 +64,28 @@ function incorPass() {
 	alert("Sorry wrong password, try again..");
 }
 
+$(document).keypress(function(e) {
+		if(e.charCode == 103){
+			console.log("Height: " + $("#b").scrollTop() + "," + $("#databaseAppID").offset().top);
+		}
+});
+
+$("#alc").click(function() {
+	$("#b").animate({scrollTop: 100}, "1000", "swing");
+});
+
+$("#ix").click(function() {
+	$("#b").animate({scrollTop: 1173}, "1000", "swing");
+});
+
+$("#phyS").click(function() {
+	$("#b").animate({scrollTop: 2100}, "1000", "swing");
+});
+
+$("#alg").click(function() {
+	$("#b").animate({scrollTop: 2970}, "1000", "swing");
+});
+
 $("#physDown").mousedown(function() {
 	var pass = prompt("Please enter the password to download this file\nYou can get this password by contacting me!", "Put password here!");
 	if(pass == password){
@@ -75,10 +97,50 @@ $("#physDown").mousedown(function() {
 	}
 });
 
+function returnScrollPos(item){
+	var o1 = $("#codeSection1").is(":visible");
+	var o2 = $("#codeSection2").is(":visible");
+	var o3 = $("#codeSection3").is(":visible");
+	var o4 = $("#codeSection4").is(":visible");
+	if(item == 1){
+		return 3083;
+	}else if(item == 2){
+		if(o1){
+			return 3729;
+		}else{
+			return 3151;
+		}
+	}else if(item == 3){
+		if(o1 === false && o2 === false){
+				return 3129;
+		}else if(o1 === true && o2 === false){
+				return 3729;
+		}else if(o1 === false && o2 === true){
+				return 3825;
+		}else{
+				return 4425;
+		}
+	}else{
+		if(o1 === false && o2 === false && o3 === false){
+				return 3129;
+		}else if(o1 === true && o2 === false && o3 === false){
+				return 3729;
+		}else if(o1 === false && o2 === true && o3 === false){
+				return 3899;
+		}else if(o1 === false && o2 === false && o3 === true){
+				return 3899;
+		}else if(o1 === true && o2 === true && o3 === true){
+				return 5099;
+		}else {
+			return 4499;
+		}
+	}
+}
+
 $("#openNQueens").click(function() {
 	if($("#codeSection1").is(":hidden")){
 		$("#codeSection1").show("slow", function() {
-			$("#b").scrollTop(($("#codeSection1").offset().top - 150) + $("#b").scrollTop());
+			$("#b").animate({scrollTop: returnScrollPos(1)}, "1000", "swing");
 		});
 		$("#extraSpace").slideUp();
 		var fieldNameElement = document.getElementById("openNQueens");
@@ -90,7 +152,7 @@ $("#openNQueens").click(function() {
 		var o4 = $("#codeSection4").is(":visible");
 		if(o2 === false && o3 === false && o4 === false){
 			$("#extraSpace").show("slow", function() {
-				$("#b").scrollTop(($("#titleOfSampleAlogorithm").offset().top - 100) + $("#b").scrollTop());
+			$("#b").animate({scrollTop: 2970}, "1000", "swing");
 			});
 		}
 		var fieldNameElement1 = document.getElementById("openNQueens");
@@ -101,7 +163,7 @@ $("#openNQueens").click(function() {
 $("#openSQueue").click(function() {
 	if($("#codeSection2").is(":hidden")){
 		$("#codeSection2").show("slow", function() {
-			$("#b").scrollTop(($("#codeSection2").offset().top - 150) + $("#b").scrollTop());
+			$("#b").animate({scrollTop: returnScrollPos(2)}, "1000", "swing");
 		});
 		$("#extraSpace").slideUp();
 		var fieldNameElement = document.getElementById("openSQueue");
@@ -113,7 +175,7 @@ $("#openSQueue").click(function() {
 		var o4 = $("#codeSection4").is(":visible");
 		if(o1 === false && o3 === false && o4 === false){
 			$("#extraSpace").show("slow", function() {
-				$("#b").scrollTop(($("#titleOfSampleAlogorithm").offset().top - 100) + $("#b").scrollTop());
+				$("#b").animate({scrollTop: 2970}, "1000", "swing");
 			});
 		}
 		var fieldNameElement2 = document.getElementById("openSQueue");
@@ -124,7 +186,7 @@ $("#openSQueue").click(function() {
 $("#openSudoku1").click(function() {
 	if($("#codeSection4").is(":hidden")){
 		$("#codeSection4").show("slow", function() {
-			$("#b").scrollTop(($("#codeSection4").offset().top - 150) + $("#b").scrollTop());
+			$("#b").animate({scrollTop: returnScrollPos(3)}, "1000", "swing");
 		});
 		$("#extraSpace").slideUp();
 		var fieldNameElement = document.getElementById("openSudoku1");
@@ -136,7 +198,7 @@ $("#openSudoku1").click(function() {
 		var o3 = $("#codeSection3").is(":visible");
 		if(o1 === false && o2 === false && o3 === false){
 			$("#extraSpace").show("slow", function() {
-				$("#b").scrollTop(($("#titleOfSampleAlogorithm").offset().top - 100) + $("#b").scrollTop());
+				$("#b").animate({scrollTop: 2970}, "1000", "swing");
 			});
 		}
 		var fieldNameElement3 = document.getElementById("openSudoku1");
@@ -147,7 +209,7 @@ $("#openSudoku1").click(function() {
 $("#openSudoku").click(function() {
 	if($("#codeSection3").is(":hidden")){
 		$("#codeSection3").show("slow", function() {
-			$("#b").scrollTop(($("#codeSection3").offset().top - 150) + $("#b").scrollTop());
+			$("#b").animate({scrollTop: returnScrollPos(4)}, "1000", "swing");
 		});
 		$("#extraSpace").slideUp();
 		var fieldNameElement = document.getElementById("openSudoku");
@@ -159,7 +221,7 @@ $("#openSudoku").click(function() {
 		var o4 = $("#codeSection4").is(":visible");
 		if(o1 === false && o2 === false && o4 === false){
 			$("#extraSpace").show("slow", function() {
-				$("#b").scrollTop(($("#titleOfSampleAlogorithm").offset().top - 100) + $("#b").scrollTop());
+			$("#b").animate({scrollTop: 2970}, "1000", "swing");
 			});
 		}
 		var fieldNameElement3 = document.getElementById("openSudoku");
