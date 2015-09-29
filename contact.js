@@ -31,13 +31,11 @@ function addLanguageColors(){
 	document.getElementById("language5").style.background = grabColour();
 	document.getElementById("language7").style.width = "34%";
 	document.getElementById("language6").style.background = grabColour();
-	document.getElementById("language10").style.width = "34%";
 	document.getElementById("language7").style.background = grabColour();
 	document.getElementById("language2").style.width = "37%";
 	document.getElementById("language8").style.background = grabColour();
 	document.getElementById("language9").style.background = grabColour();
 	document.getElementById("reducedHeight").style.margin = "5% 0% 0% 10%";
-	document.getElementById("language10").style.background = grabColour();
 	document.getElementById("navName").style.fontSize = "25px";
 	document.getElementById("navName").style.paddingTop = "16px";
 	document.getElementById("navPrWork").style.fontSize = "15px";
